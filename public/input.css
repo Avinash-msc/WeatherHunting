@@ -2,3 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .divider-line {
+        @apply flex-grow border-neutral-700 md:max-lg:rotate-90;
+    }
+
+    .btn-primary {
+        text-shadow: 0 0 1px midnightblue;
+        @apply text-white shadow-md shadow-blue-500 rounded-full font-medium px-2.5 py-0.5 m-2 hover:ring-sky-50 hover:bg-opacity-90 hover:ring-2 active:ring-4 active:text-neutral-900 active:bg-opacity-70 active:ring-white lg:w-full md:py-1 lg:rounded-lg;
+    }
+
+    .card {
+        @apply bg-white bg-opacity-50 p-2 mt-4 rounded-3xl;
+    }
+
+    .card-title {
+        @apply text-center text-lg font-semibold underline p-4 pt-1;
+    }
+
+    h3.card-title {
+        @apply text-left text-base no-underline;
+    }
+
+    .card-body {
+        @apply flex gap-2 px-2 items-center overflow-x-scroll;
+    }
+
+    .forecast-item {
+        @apply flex-none flex p-2 rounded-md items-center flex-col border border-black;
+    }
+
+}

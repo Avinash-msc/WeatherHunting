@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Hunting</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <!-- Frontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
 </head>
-<body>
-    
+
+<body class="flex flex-col min-h-screen bg-gradient-to-b from-sky-300 from-30% to-sky-600 to-100% bg-grad">
+    <header class="text-center p-4 text-3xl font-semibold text-[#191970] shadow-sm shadow-neutral-600 ">
+        <span class="text-sm">Climate Icon</span> Weather Hunting
+    </header>
+
+    <main class="flex-grow m-1 mt-4 lg:flex lg:mt-1">
+        <section id="search-sec"
+            class="p-2 flex flex-col justify-center items-center font-medium border-b-2 md:max-lg:flex-row lg:justify-normal lg:space-y-4 lg:p-4 lg:py-8 lg:border-b-0 lg:border-r-2">
+            <div class="relative mb-2 text-lg">
+                <label for="searchbar" class="block mb-1 pl-2 ">Enter the City:</label>
+                <i class="fas fa-search absolute bottom-2.5 left-2"></i>
+                <input type="text" name="search" id="searchbar" placeholder="eg. London, Tokyo, New York"
+                    class="w-[90vw] md:w-[50vw] lg:w-[30vw] p-1 pl-8 border rounded-full outline-none placeholder:text-neutral-700 shadow-lg shadow-sky-700 focus:ring-sky-600 focus:ring-4">
+            </div>
+            <div
+                class="flex w-full justify-center items-center md:justify-around md:self-end md:pb-2 lg:flex-col lg:justify-normal lg:space-y-4 lg:h-1/2">
+                <button id="search-btn" type="button" title="Search the City" class="btn-primary bg-[#5454d3]">
+                    <i class="fas fa-search"></i>
+                    <span class="hidden sm:inline">Search</span>
+                </button>
+                <div class="flex items-center w-1/4 md:w-10 md:max-lg:text-lg lg:w-10/12">
+                    <hr class="divider-line">
+                    <span class="px-2 md:max-lg:p-0">or</span>
+                    <hr class="divider-line">
+                </div>
+                <button type="button" id="location-btn" title="Search using location"
+                    class="btn-primary bg-neutral-700">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="hidden sm:inline"> Use Current Location </span>
+                </button>
+                
+            </div>
+        </section>
+
+        <section id="weather-report" class="p-2 w-full lg:px-20 lg:my-2">
+            <div id="current-weather" class="card">
+                <h2 class="card-title">Current Location</h2>
+                <div id="hour-forecast">
+                    <h3 class="card-title">Hourly Forecast</h3>
+                    <div class="card-body">
+                        <div class="forecast-item">
+                            <span>Time</span>
+                            <i>icon</i>
+                            <span id="temp">min | max</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="days-forecast" class="card">
+                <h2 class="card-title">5-Day Forecast</h2>
+                <div class="card-body">
+                    <div class="forecast-item">
+                        <span>Date</span>
+                        <i>icon</i>
+                        <span>summary</span>
+                        <span id="temp">min | max</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="m-0 py-3 bg-neutral-800 text-neutral-200 text-right">
+        <div class="copyright px-4">
+            <i class="fas fa-copyright"></i> Copyright 2024
+        </div>
+    </footer>
 </body>
+
 </html>
