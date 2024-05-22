@@ -1,0 +1,16 @@
+{
+  "name": "weather_hunting",
+  "version": "1.0.0",
+  "description": "a simple web application to check weather of an area using weather api.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "<git repo url>"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./public/input.css -o ./dist/output.css --watch"
+  }
+}
