@@ -9,15 +9,40 @@
 
     .btn-primary {
         text-shadow: 0 0 1px midnightblue;
-        @apply text-white shadow-md shadow-blue-500 rounded-full font-medium px-2.5 py-0.5 m-2 hover:ring-sky-50 hover:bg-opacity-90 hover:ring-2 active:ring-4 active:text-neutral-900 active:bg-opacity-70 active:ring-white lg:w-full md:py-1 lg:rounded-lg;
+        @apply font-normal text-white shadow-md shadow-blue-500 rounded-full px-2.5 py-0.5 m-2 hover:font-semibold hover:ring-sky-50 hover:bg-opacity-90 hover:ring-2 active:ring-4 active:text-neutral-900 active:bg-opacity-70 active:ring-white lg:w-full md:py-1 lg:rounded-lg;
+    }
+
+    #searchbar:focus + #dropdown{
+        @apply block;
+    }
+
+    #dropdown{
+        @apply hidden hover:block bg-white bg-opacity-90 absolute z-10 left-0 right-0 mt-0.5 rounded-xl overflow-x-hidden overflow-y-auto max-h-40 shadow-lg;
+    }
+
+    .drop-item{
+        @apply p-1 px-4 text-ellipsis whitespace-nowrap cursor-pointer hover:bg-neutral-400 ;
     }
 
     .card {
-        @apply bg-white bg-opacity-50 p-2 mt-4 rounded-3xl;
+        @apply hidden;
+    }
+    
+    .card:not(:empty){
+        @apply block w-full md:w-[85%] bg-white bg-opacity-50 p-2 mt-2 rounded-3xl;
+    }
+
+    .card:first-child:not(:empty){
+        @apply max-w-md xl:max-w-lg;
     }
 
     .card-title {
-        @apply text-center text-lg font-semibold underline p-4 pt-1;
+        font-family: Tahoma, Geneva, Verdana, sans-serif;
+        @apply bg-white bg-opacity-80 rounded-full text-center text-xl font-bold p-2;
+    }
+
+    .icon{
+        @apply bg-blend-multiply aspect-square;
     }
 
     h3.card-title {
@@ -25,11 +50,30 @@
     }
 
     .card-body {
-        @apply flex gap-2 px-2 items-center overflow-x-scroll;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(153, 216, 235) rgb(12, 141, 192);
+        @apply flex items-center justify-around overflow-x-auto;
     }
 
     .forecast-item {
-        @apply flex-none flex p-2 rounded-md items-center flex-col border border-black;
+        @apply text-sm flex-none w-fit flex p-1 my-2 font-semibold items-center flex-col hover:-translate-y-2 transition transform-gpu ease-linear duration-300;
     }
+
+    .forecast-item p{
+        @apply min-w-36 flex justify-around items-center;
+    }
+
+    table{
+        @apply self-end m-2;
+    }
+    
+    td{
+        @apply p-1 text-center md:py-1.5 font-semibold;
+    }
+    
+    tr:first-child td{
+        @apply text-lg font-bold;
+    }
+    
 
 }

@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "<git repo url>"
+    "url": "https://github.com/Avinash-msc/WeatherHunting.git"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3"
